@@ -93,9 +93,6 @@ func (p *UserAgent) detectBrowser(sections []section) {
 					case "coc_coc_browser":
 						p.browser.Name = "越南版的谷歌浏览器"
 						p.browser.Version = sections[slen-3].version
-					case "MicroMessenger":
-						p.browser.Name = "微信客户端浏览器"
-						p.browser.Version = sections[slen-3].version
 					default:
 						switch sections[slen-2].name {
 						case "Electron":
@@ -106,6 +103,9 @@ func (p *UserAgent) detectBrowser(sections []section) {
 							p.browser.Version = sections[slen-2].version
 						case "PhantomJS":
 							p.browser.Name = "PhantomJS框架"
+							p.browser.Version = sections[slen-2].version
+						case "MicroMessenger":
+							p.browser.Name = "微信客户端浏览器"
 							p.browser.Version = sections[slen-2].version
 						default:
 							switch sections[sectionIndex].name {

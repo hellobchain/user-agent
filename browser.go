@@ -93,6 +93,9 @@ func (p *UserAgent) detectBrowser(sections []section) {
 					case "coc_coc_browser":
 						p.browser.Name = "越南版的谷歌浏览器"
 						p.browser.Version = sections[slen-3].version
+					case "MicroMessenger":
+						p.browser.Name = "微信客户端浏览器"
+						p.browser.Version = sections[slen-3].version
 					default:
 						if strings.Contains(sections[slen-2].name, "Wechat") {
 							p.browser.Name = "微信客户端浏览器"

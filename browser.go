@@ -89,6 +89,7 @@ func (p *UserAgent) detectBrowser(sections []section) {
 					if strings.Contains(sections[slen-1].name, "360") {
 						p.browser.Name = "360浏览器"
 						p.browser.Version = sections[slen-1].version
+						break
 					}
 					switch sections[slen-3].name {
 					case "YaBrowser":
@@ -107,6 +108,7 @@ func (p *UserAgent) detectBrowser(sections []section) {
 						if strings.Contains(sections[slen-3].name, "Wechat") || strings.Contains(sections[slen-2].name, "Wechat") {
 							p.browser.Name = "微信客户端浏览器"
 							p.browser.Version = sections[slen-3].version + "|" + sections[slen-2].version
+							break
 						}
 						switch sections[slen-2].name {
 						case "Electron":
